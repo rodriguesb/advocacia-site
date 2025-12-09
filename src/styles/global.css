@@ -1,0 +1,42 @@
+:root {
+    --vinho: #300404;
+    --dourado: #e4c889;
+    --marrom: #786140;
+    --olive: #918660;
+    --cinza: #847c7c;
+    --branco: #ffffff;
+    --header-height: 90px;
+}
+
+main {
+    padding-top: var(--header-height);
+    transition: padding-top 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.page {
+    padding-bottom: 120px;
+}
+
+.site-main {
+    padding-top: var(--header-height);
+    transition: padding-top 0.3s ease;
+}

@@ -1,0 +1,144 @@
+/* CONTAINER */
+.form-box {
+  max-width: 520px;
+  width: 100%;
+  background: #fff;
+  padding: 36px;
+  border-radius: 16px;
+  border: 2px solid var(--dourado);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.5s ease;
+}
+
+/* FADE OUT */
+.form-fade {
+  opacity: 0;
+}
+
+/* TÍTULO */
+.form-box h2 {
+  text-align: center;
+  color: var(--vinho);
+  margin-bottom: 18px;
+}
+
+/* SUCESSO */
+.form-success {
+  text-align: center;
+  animation: pop 0.5s ease;
+}
+
+/* CHECK ICON */
+.check-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  margin: 0 auto 15px;
+
+  position: relative;
+  animation: pulse 1.5s infinite;
+}
+
+.check-icon::after {
+  content: "✓";
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  margin-top: 15px;
+  height: 6px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--dourado), var(--vinho));
+  display: block;
+  animation: progress 3s linear forwards;
+}
+
+/* ERROR */
+.form-error {
+  background: #5a0f0f;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* FORM */
+.form-box form {
+  display: grid;
+  gap: 14px;
+}
+
+/* INPUTS */
+.form-box input,
+.form-box textarea {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* BOTÃO */
+.form-box button {
+  background: var(--vinho);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.form-box button:hover {
+  background: var(--dourado);
+  color: black;
+}
+
+/* ANIMAÇÕES */
+@keyframes progress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

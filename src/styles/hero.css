@@ -1,0 +1,39 @@
+.hero {
+  min-height: 100vh;  
+  background: linear-gradient(rgba(48, 4, 4, .92), rgba(48, 4, 4, .92)), url('../assets/img/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* CORREÇÃO PARA MOBILE */
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    height: 100svh;
+    /* Corrige barra de endereço no mobile */
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 25px;
+  text-align: center; 
+  align-items: center;
+  justify-content: center;
+  color: var(--dourado);
+}
+
+/* TEXTO AJUSTADO */
+.hero-text h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero-text p {
+  font-size: 18px;
+  max-width: 880px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
