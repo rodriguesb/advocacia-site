@@ -1,74 +1,94 @@
-/* RAIZ */
+/* =====================================
+   CONTATO — PADRÃO VISUAL PROFISSIONAL
+===================================== */
+
 .contato-section {
-    width: 100%;
-    min-height: 100vh;
-    padding: 80px 20px;
+  width: 100%;
+  min-height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: clamp(60px, 8vw, 100px) 20px;
 
-    background: linear-gradient(rgba(48, 4, 4, .92), rgba(48, 4, 4, .92)), url('../assets/img/hero.jpg') center/cover no-repeat;
-    color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(rgba(48, 4, 4, 0.92), rgba(48, 4, 4, 0.92)),
+    url('../assets/img/hero.jpg') center/cover no-repeat;
+
+  color: var(--texto-claro);
+  text-align: center;
 }
 
-/* CONTAINER */
-.contato-section .contato-container {
-    max-width: 1200px;
-    width: 100%;
+/* CONTAINER CENTRAL */
+.contato-container {
+  max-width: 1200px;
+  width: 100%;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: clamp(30px, 6vw, 60px);
+  align-items: center;
 }
 
-/* INFORMAÇÕES */
-.contato-section .contato-info h2 {
-    font-size: 42px;
-    color: var(--dourado);
-    margin-bottom: 10px;
+/* TEXTO */
+.contato-info h2 {
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  margin-bottom: 10px;
+  color: var(--dourado);
 }
 
-.contato-section .contato-info h3 {
-    font-size: 24px;
-    color: var(--dourado);
-    margin-bottom: 15px;
+.contato-info h3 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  margin-bottom: 15px;
+  color: var(--dourado);
 }
 
-.contato-section .contato-info p {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: var(--branco);
+.contato-info p {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  margin-bottom: 10px;
 }
 
 /* BOTÃO WHATSAPP */
-.contato-section .contato-whatsapp {
-    display: inline-block;
-    margin-top: 20px;
+.contato-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    background: linear-gradient(145deg, #25D366, #1da955);
-    color: #fff;
+  margin-top: 22px;
+  padding: 12px 28px;
 
-    padding: 12px 24px;
-    border-radius: 50px;
+  background: linear-gradient(145deg, #25D366, #1da955);
+  color: #fff;
 
-    text-decoration: none;
-    font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    transition: 0.3s;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.25);
+  transition: 0.3s ease;
 }
 
-.contato-section .contato-whatsapp:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
+/* HOVER */
+.contato-whatsapp:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .contato-section .contato-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+/* =====================================
+   RESPONSIVO
+===================================== */
+@media (max-width: 900px) {
+  .contato-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contato-info {
+    max-width: 92%;
+    margin: auto;
+  }
 }

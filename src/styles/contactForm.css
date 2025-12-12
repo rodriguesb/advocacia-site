@@ -1,82 +1,97 @@
-/* CONTAINER */
+/* =====================================
+   FORM — PADRÃO PROFISSIONAL RESPONSIVO
+===================================== */
+
 .form-box {
   max-width: 520px;
   width: 100%;
-  background: #fff;
-  padding: 36px;
-  border-radius: 16px;
+
+  background: #ffffff;
+  padding: clamp(24px, 5vw, 36px);
+
+  border-radius: 18px;
   border: 2px solid var(--dourado);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-  transition: opacity 0.5s ease;
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transition: opacity 0.5s ease, transform 0.3s ease;
 }
 
-/* FADE OUT */
+/* ANIMAÇÃO SAÍDA */
 .form-fade {
   opacity: 0;
+  transform: scale(0.98);
 }
 
 /* TÍTULO */
 .form-box h2 {
   text-align: center;
   color: var(--vinho);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
 /* SUCESSO */
 .form-success {
   text-align: center;
-  animation: pop 0.5s ease;
+  animation: pop 0.4s ease;
 }
 
 /* CHECK ICON */
 .check-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #4CAF50;
-  margin: 0 auto 15px;
+  width: clamp(52px, 8vw, 64px);
+  height: clamp(52px, 8vw, 64px);
 
+  border-radius: 50%;
+  background-color: #41b653;
+
+  margin: 0 auto 16px;
   position: relative;
-  animation: pulse 1.5s infinite;
+
+  animation: pulse 1.4s infinite ease-in-out;
 }
 
 .check-icon::after {
   content: "✓";
-  color: white;
-  font-size: 36px;
+  color: #fff;
+  font-size: clamp(30px, 6vw, 38px);
   font-weight: bold;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -55%);
+  transform: translate(-50%, -58%);
 }
 
 /* PROGRESS BAR */
 .progress-bar {
-  margin-top: 15px;
+  margin-top: 16px;
   height: 6px;
   background: #eee;
-  border-radius: 10px;
+  border-radius: 50px;
   overflow: hidden;
 }
 
 .progress-bar::after {
   content: '';
   height: 100%;
-  width: 100%;
+  width: 0;
+
   background: linear-gradient(90deg, var(--dourado), var(--vinho));
   display: block;
-  animation: progress 3s linear forwards;
+
+  animation: progress 3s ease forwards;
 }
 
-/* ERROR */
+/* ERRO */
 .form-error {
-  background: #5a0f0f;
-  color: white;
-  padding: 12px;
-  border-radius: 5px;
+  background: #6d0f0f;
+  color: #fff;
+
+  padding: 12px 14px;
+  border-radius: 8px;
+
   text-align: center;
+  font-size: 0.85rem;
 }
 
 /* FORM */
@@ -85,60 +100,79 @@
   gap: 14px;
 }
 
-/* INPUTS */
+/* CAMPOS */
 .form-box input,
 .form-box textarea {
-  padding: 14px;
-  border-radius: 8px;
+  width: 100%;
+  padding: 14px 16px;
+
+  border-radius: 10px;
   border: 1px solid #ddd;
+
+  font-size: .95rem;
+
+  outline: none;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-box textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* FOCO */
+.form-box input:focus,
+.form-box textarea:focus {
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 2px rgba(228, 200, 137, 0.3);
 }
 
 /* BOTÃO */
 .form-box button {
+  margin-top: 5px;
+
   background: var(--vinho);
-  color: white;
+  color: #fff;
+
   border: none;
+  border-radius: 40px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+
   padding: 14px;
-  border-radius: 50px;
+
   cursor: pointer;
+  transition: 0.25s ease;
 }
 
+/* HOVER */
 .form-box button:hover {
   background: var(--dourado);
-  color: black;
+  color: #2b1c1c;
 }
 
-/* ANIMAÇÕES */
+/* =====================================
+   ANIMAÇÕES
+===================================== */
+
 @keyframes progress {
   from {
     width: 0;
   }
-
   to {
     width: 100%;
   }
 }
 
 @keyframes pulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.08);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
 @keyframes pop {
-  from {
-    transform: scale(0.85);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }

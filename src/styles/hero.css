@@ -1,39 +1,82 @@
+/* =====================================
+   HERO RESPONSIVO E PROFISSIONAL
+===================================== */
+
 .hero {
-  min-height: 100vh;  
-  background: linear-gradient(rgba(48, 4, 4, .92), rgba(48, 4, 4, .92)), url('../assets/img/hero.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  width: 100%;
+
+  background:
+    linear-gradient(rgba(48, 4, 4, 0.92), rgba(48, 4, 4, 0.92)),
+    url('../assets/img/hero.jpg') center/cover no-repeat;
+
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  justify-content: center;
+
+  padding-inline: 20px;
+  text-align: center;
 }
 
-/* CORREÇÃO PARA MOBILE */
+/* CORREÇÃO ESPECÍFICA MOBILE (iOS / Android UI) */
 @supports (-webkit-touch-callout: none) {
   .hero {
-    height: 100svh;
-    /* Corrige barra de endereço no mobile */
+    min-height: 100svh;
   }
 }
 
+/* CONTAINER CENTRAL */
 .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
   width: 100%;
-  padding: 0 25px;
-  text-align: center; 
-  align-items: center;
+  max-width: 1200px;
+
+  display: flex;
   justify-content: center;
+  align-items: center;
+
+  padding-inline: 20px;
+
   color: var(--dourado);
 }
 
-/* TEXTO AJUSTADO */
-.hero-text h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+/* TEXTO */
+.hero-text {
+  max-width: 850px;
 }
 
+/* TÍTULO */
+.hero-text h1 {
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+/* PARÁGRAFO */
 .hero-text p {
-  font-size: 18px;
-  max-width: 880px;
+  font-size: clamp(0.95rem, 2.4vw, 1.1rem);
+  max-width: 760px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.65;
+  color: var(--texto-claro);
+}
+
+/* =====================================
+   AJUSTES MOBILE
+===================================== */
+@media (max-width: 768px) {
+  .hero {
+    padding-inline: 16px;
+  }
+
+  .hero-text {
+    max-width: 92%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
 }
