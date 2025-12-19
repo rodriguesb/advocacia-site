@@ -1,56 +1,68 @@
 /* =====================================
-   FOOTER PREMIUM — PADRÃO RESPONSIVO
+   FOOTER PREMIUM — PADRÃO GLOBAL
 ===================================== */
 
 .footer-premium {
-  position: fixed;
-  bottom: 0;
   width: 100%;
-
   background: linear-gradient(135deg, var(--vinho), #1a0101);
   color: #ffffff;
 
-  padding: clamp(14px, 3vw, 22px) clamp(12px, 4vw, 22px);
-  z-index: 999;
+  padding: clamp(14px, 3vw, 22px) clamp(14px, 4vw, 26px);
 
-  box-shadow: 0 -8px 18px rgba(0,0,0,0.35);
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.35);
   border-top: 2px solid var(--dourado);
 }
 
-/* CONTAINER */
+/* FIXO SOMENTE EM DESKTOP */
+@media (min-width: 769px) {
+  .footer-premium {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+  }
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+
 .footer-container {
   max-width: 1180px;
-  margin: auto;
+  margin: 0 auto;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
 }
 
-/* INFORMAÇÕES */
+/* =====================================
+   INFORMAÇÕES
+===================================== */
+
 .footer-info strong {
   font-size: clamp(0.9rem, 2vw, 1rem);
   color: var(--dourado);
 }
 
-.footer-info span {
+.footer-info span,
+.footer-info p {
   display: block;
   font-size: clamp(0.75rem, 2vw, .85rem);
-  opacity: .8;
-}
-
-.footer-info p {
+  opacity: .85;
   margin-top: 4px;
-  font-size: clamp(0.75rem, 2vw, .85rem);
-  opacity: .9;
 }
 
-/* CONTATO */
+/* =====================================
+   CONTATO
+===================================== */
+
 .footer-contact p {
   margin: 4px 0;
   font-size: clamp(0.75rem, 2vw, .85rem);
+  opacity: .9;
 }
 
 /* =====================================
@@ -59,9 +71,8 @@
 
 .whatsapp-float {
   position: fixed;
-
-  bottom: clamp(80px, 12vh, 110px);
   right: clamp(12px, 4vw, 22px);
+  bottom: clamp(18px, 5vh, 26px);
 
   background: linear-gradient(135deg, #25D366, #0fa958);
   color: #ffffff;
@@ -73,13 +84,12 @@
   font-size: clamp(.8rem, 2vw, .95rem);
   text-decoration: none;
 
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  transition: .3s ease;
-
   display: inline-flex;
   align-items: center;
   gap: 8px;
 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transition: .3s ease;
   z-index: 1000;
 }
 
@@ -90,12 +100,16 @@
 }
 
 /* =====================================
-   RESPONSIVO
+   RESPONSIVO MOBILE
 ===================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer-premium {
+    position: relative;
   }
 }

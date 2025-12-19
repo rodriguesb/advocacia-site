@@ -1,15 +1,13 @@
+import SEO from './SEO'
 import '../styles/hero.css'
-import SEO from '../components/SEO'
 
 export default function Hero() {
   return (
-    <section className="page hero">
-
+    <section className="hero">
       <SEO
         title="Advogada Trabalhista em Mauá | Misllene Silva Santos"
         description="Atendimento jurídico trabalhista especializado em Mauá e região. Consultoria humanizada e defesa de direitos do trabalhador."
       />
-
       <div className="hero-content">
         <div className="hero-text">
           <h1>Compromisso com seus direitos. Excelência em cada detalhe.</h1>
@@ -20,8 +18,12 @@ export default function Hero() {
             Aqui, você não é apenas mais um processo. Você é nossa prioridade.
           </p>
         </div>
+        {/* Optionally could include a CTA or small form */}
       </div>
-
     </section>
   )
 }
+
+
+
+

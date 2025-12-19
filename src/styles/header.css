@@ -1,6 +1,10 @@
 /* =====================================
-   HEADER GLOBAL RESPONSIVO
+   HEADER GLOBAL
 ===================================== */
+
+:root {
+  --header-height: 90px;
+}
 
 .site-header {
   position: fixed;
@@ -17,98 +21,115 @@
   align-items: center;
 
   height: var(--header-height);
-  transition: all 0.3s ease;
 }
 
 /* CONTAINER CENTRAL */
 .site-header .header-container {
   width: 100%;
   max-width: 1200px;
-
   padding-inline: 20px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  gap: 30px;
 }
 
 /* LOGO */
-.site-header .header-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .site-header .header-logo img {
   height: clamp(45px, 6vw, 68px);
-  max-width: 100%;
   object-fit: contain;
 }
 
-/* MENU */
+/* MENU DESKTOP */
 .site-header .header-nav {
   display: flex;
   align-items: center;
-  gap: clamp(20px, 4vw, 55px);
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 40px;
 }
 
 /* LINKS */
 .site-header .header-nav a {
   color: var(--dourado);
   text-decoration: none;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: 1rem;
   font-weight: 600;
 
   padding: 8px 14px;
   border-radius: 6px;
 
-  letter-spacing: 0.5px;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
-/* EFEITO HOVER */
-.site-header .header-nav a:hover {
-  background-color: var(--dourado);
-  color: var(--vinho);
-  transform: translateY(-2px);
-}
-
-/* LINK ATIVO (REACT ROUTER) */
+.site-header .header-nav a:hover,
 .site-header .header-nav a.active {
-  color: var(--vinho);
   background-color: var(--dourado);
-  font-weight: bold;
+  color: var(--vinho);
 }
 
 /* =====================================
-   RESPONSIVO
+   BOTÃO SANDUÍCHE
 ===================================== */
-@media (max-width: 900px) {
-  .site-header .header-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
-  .site-header {
-    height: auto;
-    padding-block: 12px;
-  }
-
-  .site-header .header-nav {
-    width: 100%;
-    justify-content: center;
-    gap: 20px;
-  }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-@media (max-width: 500px) {
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--dourado);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+  /* MOSTRA BOTÃO */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* ESCONDE MENU */
   .site-header .header-nav {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+
+    background-color: rgba(48, 4, 4, 0.97);
+    backdrop-filter: blur(10px);
+
     flex-direction: column;
-    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.4s ease;
+  }
+
+  /* MENU ABERTO */
+  .site-header .header-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .site-header .header-nav a {
+    font-size: 1.2rem;
   }
 }

@@ -1,20 +1,13 @@
 import SEO from '../components/SEO'
-import hero from '../assets/img/hero.jpg'
 import '../styles/sobre.css'
 
 export default function Sobre() {
   return (
-    <section className="sobre-section" id="sobre">
-      <SEO
-        title="Sobre a Advogada | Misllene Silva Santos"
-        description="Conheça a trajetória profissional da advogada trabalhista Misllene Silva Santos, especialista em Direito do Trabalho em Mauá."
-      />
-
-      <div className="sobre-container">
+    <section className="sobre-section">
+      <SEO title="Sobre a Advogada | Misllene Silva Santos" description="Conheça a advogada trabalhista Misllene Silva Santos" />
+      <div className="sobre-container section-container">
         <div className="sobre-texto">
-
           <h1>Minha Jornada</h1>
-
           <p>
             Dra. Misllene Silva Santos é especialista em Direito do Trabalho e atua
             com seriedade, ética e dedicação na defesa dos direitos de trabalhadores
@@ -26,16 +19,19 @@ export default function Sobre() {
             <br /><br />
             Aqui, você não é apenas mais um processo. Você é prioridade.
           </p>
-
           <div className="sobre-destaques">
             <span>OAB/SP 531.965</span>
             <span>Atendimento humanizado</span>
             <span>Consultoria especializada</span>
           </div>
-
+        </div>
+        <div className="sobre-imagem">
+          <img src="/src/assets/img/trabalhista.jpg" alt="Sobre" />
         </div>
       </div>
-
     </section>
   )
 }
+
+
+

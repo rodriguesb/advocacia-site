@@ -7,10 +7,15 @@
   --branco: #ffffff;
 
   --header-height: 90px;
+  --footer-height: 110px;
+
   --texto-claro: #f5f1e6;
 }
 
-/* RESET GLOBAL */
+/* =====================================
+   RESET GLOBAL
+===================================== */
+
 *,
 *::before,
 *::after {
@@ -36,7 +41,10 @@ body {
   color: #222;
 }
 
-/* TIPOGRAFIA FLUIDA */
+/* =====================================
+   TIPOGRAFIA
+===================================== */
+
 h1 {
   font-size: clamp(2rem, 5vw, 3.3rem);
 }
@@ -60,14 +68,21 @@ h3 {
   font-family: 'Playfair Display', serif;
 }
 
-/* IMAGENS E VÍDEOS RESPONSIVOS */
-img, video {
+/* =====================================
+   MEDIA
+===================================== */
+
+img,
+video {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* CONTAINER FLUIDO */
+/* =====================================
+   CONTAINER
+===================================== */
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -75,55 +90,84 @@ img, video {
   padding-inline: 20px;
 }
 
-/* ESTRUTURA PRINCIPAL */
-.site-main {
-  padding-top: var(--header-height);
-  min-height: calc(100vh - var(--header-height));
-  transition: padding-top .3s ease;
-}
+/* =====================================
+   ESTRUTURA PRINCIPAL
+===================================== */
 
+/* APENAS UM CONTROLE DE HEADER FIXO */
 main {
   padding-top: var(--header-height);
-  transition: padding-top .3s ease;
+  transition: padding-top 0.3s ease;
 }
 
-/* PÁGINAS */
+/* COMPENSAÇÃO DO FOOTER FIXO (DESKTOP) */
+@media (min-width: 769px) {
+  main {
+    padding-bottom: var(--footer-height);
+  }
+}
+
+/* =====================================
+   PÁGINAS
+===================================== */
+
 .page {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 20px 60px;
+  padding: 80px 20px 40px;
 }
+
+/* =====================================
+   MOBILE
+===================================== */
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 130px;
+    --header-height: 120px;
+  }
+
+  main {
+    padding-top: var(--header-height);
+    padding-bottom: 0;
   }
 
   .page {
-    padding-top: 150px;
+    padding-top: 40px;
     text-align: center;
     align-items: flex-start;
   }
 }
 
-/* SEÇÕES */
+/* =====================================
+   SEÇÕES
+===================================== */
+
 section {
   width: 100%;
 }
 
-/* ACESSIBILIDADE */
+/* =====================================
+   ACESSIBILIDADE
+===================================== */
+
 :focus-visible {
   outline: 3px solid var(--dourado);
   outline-offset: 3px;
 }
 
-/* ANIMAÇÕES LEVES */
+/* =====================================
+   SCROLL OFFSET (ANCORAS)
+===================================== */
+
 * {
   scroll-margin-top: var(--header-height);
 }
 
-/* PROVIDÊNCIA PARA COMPONENTES COM GRID */
+/* =====================================
+   UTILITÁRIOS
+===================================== */
+
 .grid {
   display: grid;
   gap: 20px;
@@ -134,16 +178,23 @@ section {
   gap: 20px;
 }
 
-/* RESPONSIVIDADE GLOBAL EXTRA */
+/* =====================================
+   MOBILE EXTRA
+===================================== */
+
 @media (max-width: 480px) {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
   p  { font-size: 0.95rem; }
 
   .page {
-    padding: 140px 16px 60px;
+    padding: 30px 16px 40px;
   }
 }
+
+/* =====================================
+   TELAS GRANDES
+===================================== */
 
 @media (min-width: 1600px) {
   .container {
